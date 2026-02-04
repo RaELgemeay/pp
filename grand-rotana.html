@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جراند روتانا اند سبا</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    background:#f3f5f7;
+}
+
+/* Header */
+header{
+    background:linear-gradient(135deg,#fd690d,#ff9f45);
+    color:#fff;
+    padding:18px 12px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:22px;
+}
+
+header p{
+    margin:5px 0 0;
+    font-size:14px;
+    opacity:.9;
+}
+
+/* Card */
+.card{
+    width:95%;
+    margin:15px auto;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
+    padding:16px;
+}
+
+/* Price */
+.price{
+    background:#eaf7ee;
+    color:#198754;
+    text-align:center;
+    padding:12px;
+    border-radius:12px;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+/* Table Desktop */
+.table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+}
+
+.table th,.table td{
+    border:1px solid #fd690d;
+    padding:8px;
+    text-align:center;
+}
+
+.table th{
+    background:#fd690d;
+    color:#fff;
+}
+
+/* Notes */
+.notes{
+    margin-top:15px;
+    background:#fff7ed;
+    padding:12px;
+    border-radius:12px;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* Back Button */
+.back{
+    display:block;
+    width:95%;
+    margin:15px auto 25px;
+    text-align:center;
+    background:#fd690d;
+    color:#fff;
+    padding:14px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:16px;
+}
+
+/* ===== Mobile table → cards ===== */
+@media(max-width:600px){
+    .table, .table thead{
+        display:none;
+    }
+
+    .row-card{
+        background:#ffffff;
+        border:1px solid #fd690d;
+        border-radius:14px;
+        padding:12px;
+        margin-bottom:10px;
+        font-size:14px;
+    }
+
+    .row-card div{
+        margin-bottom:6px;
+    }
+
+    .row-card span{
+        color:#fd690d;
+        font-weight:bold;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>جراند روتانا اند سبا</h1>
+    <p>شرم الشيخ</p>
+</header>
+
+<div class="card">
+
+<div class="price">السعر يبدأ من 9300 جنيه</div>
+
+<!-- Desktop Table -->
+<table class="table">
+<tr>
+    <th>الفترة</th>
+    <th>نوع الغرفة</th>
+    <th>السعر</th>
+</tr>
+<tr>
+    <td>10-01 → 18-03</td>
+    <td>دبل سي فيو</td>
+    <td>9300</td>
+</tr>
+<tr>
+    <td>10-01 → 18-03</td>
+    <td>سي فرونت</td>
+    <td>9700</td>
+</tr>
+</table>
+
+<!-- Mobile Cards -->
+<div class="row-card">
+    <div><span>الفترة:</span> 10-01 → 18-03</div>
+    <div><span>الغرفة:</span> دبل سي فيو</div>
+    <div><span>السعر:</span> 9300 جنيه</div>
+</div>
+
+<div class="row-card">
+    <div><span>الفترة:</span> 10-01 → 18-03</div>
+    <div><span>الغرفة:</span> سي فرونت</div>
+    <div><span>السعر:</span> 9700 جنيه</div>
+</div>
+
+<div class="notes">
+✔ الإقامة: هاف بورد<br>
+✔ طفل أقل من 12 سنة مجانًا<br>
+✔ SGL = PAX × 1.75
+</div>
+
+</div>
+
+<a class="back" href="index.html">⬅ رجوع لقائمة الفنادق</a>
+
+</body>
+</html>
