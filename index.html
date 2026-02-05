@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nile City Travel</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    background:#f4f6f8;
+}
+
+/* Header */
+header{
+    background:#fd690d;
+    color:#fff;
+    width:100%;
+    box-sizing:border-box; /* مهم علشان البادينج يتحسب صح */
+    padding:17px 15px;
+    display:flex;
+    flex-direction:column; /* عمودي على الموبايل */
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:25px;
+}
+
+nav{
+    margin-top:10px;
+}
+
+nav a{
+    color:#fff;
+    margin:5px 8px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+}
+
+/* Logo */
+.logo-fade{
+    width:200px;
+    display:block;
+    margin:30px auto;
+    opacity:0;
+    animation:fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut{
+    0%{opacity:0;transform:scale(.9)}
+    25%{opacity:1;transform:scale(1)}
+    75%{opacity:1}
+    100%{opacity:0;transform:scale(.9)}
+}
+
+section{
+    padding:25px 10px;
+    text-align:center;
+}
+
+/* Trips */
+#trips h2{
+    margin-bottom:15px;
+}
+
+.trip-card{
+    background:#fff;
+    padding:18px;
+    margin:10px auto;
+    width:95%;
+    border-radius:14px;
+    font-size:20px;
+    font-weight:bold;
+    box-shadow:0 3px 8px rgba(0,0,0,.1);
+    cursor:pointer;
+    transition:0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير لمعة عند المرور أو اللمس */
+.trip-card::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(252, 98, 3, 0.6); /* لون اللمعة */
+    opacity:0;
+    transition:0.3s;
+    border-radius:14px;
+}
+
+.trip-card:hover::after,
+.trip-card:active::after{
+    opacity:1;
+}
+
+.trip-card:hover,
+.trip-card:active{
+    transform: scale(1.05);
+    box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+header {
+    background: #fd690d;
+    color: #fff;
+    width: 100vw; /* ممتد لكل عرض الشاشة */
+    margin: 0;    /* يلغي أي مسافات حوله */
+    padding: 17px 0; /* البادينج علشان يكون فيه مساحة للنص */
+    display: flex;
+    flex-direction: column; /* عمودي على الموبايل */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Contact */
+.phone{
+    display:inline-block;
+    margin-top:20px;
+    padding:17px 30px;
+    background:#fd690d;
+    color:#fff;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:20px;
+}
+
+/* Footer */
+footer{
+    background:#0d6efd;
+    color:#fff;
+    text-align:center;
+    padding:12px;
+    font-size:14px;
+}
+
+/* Desktop تحسين */
+@media(min-width:768px){
+    header{
+        flex-direction: row; 
+        justify-content: space-between;
+        padding: 15px 30px;
+        text-align: right;
+    }
+
+    nav a{
+        font-size:18px;
+        margin:0 6px;
+    }
+}
+
+
+    .logo-fade{
+        width:350px;
+    }
+
+    .trip-card{
+        width:260px;
+        display:inline-block;
+        margin:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Nile City Travel</h1>
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#trips">الرحلات</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
+</header>
+
+<section id="home">
+    <img src="logo.jpg-removebg-preview.png" class="logo-fade" alt="لوغو الشركة">
+</section>
+
+<section id="trips">
+    <h2>رحلاتنا</h2>
+
+    <div class="trip-card" onclick="goTo('omra.html')">رحلة عمرة</div>
+    <div class="trip-card" onclick="goTo('sharm.html')">رحلة شرم الشيخ</div>
+    <div class="trip-card" onclick="goTo('hurghada.html')">رحلة الغردقة</div>
+    <div class="trip-card" onclick="goTo('dahab.html')">رحلة دهب</div>
+    <div class="trip-card" onclick="goTo('northcoast.html')">رحلة الساحل الشمالي</div>
+    <div class="trip-card" onclick="goTo('matrouh.html')">رحلة مرسى مطروح</div>
+</section>
+
+<section id="contact">
+    <h2>تواصل معنا</h2>
+    <a href="tel:01208316131" class="phone">📞 01208316131</a>
+</section>
+
+<footer>
+© 2026 جميع الحقوق محفوظة
+</footer>
+
+<script>
+function goTo(page){
+    window.location.href = page;
+}
+</script>
+
+</body>
+</html>
