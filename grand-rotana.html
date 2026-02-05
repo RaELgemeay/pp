@@ -1,10 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
 <title>جراند روتانا اند سبا</title>
 
 <style>
@@ -16,6 +15,17 @@ body{
 }
 
 /* Header */
+header{
+    background:linear-gradient(135deg,#fd690d,#ff9f45);
+    color:#fff;
+    padding:18px 12px;
+    text-align:center;
+
+    padding-top: calc(18px + env(safe-area-inset-top));
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
 header{
     background:linear-gradient(135deg,#fd690d,#ff9f45);
     color:#fff;
@@ -120,12 +130,30 @@ header p{
     font-size:16px;
 }
 
-/* Mobile */
+/* Mobile adjustments */
 @media(max-width:600px){
-    .price-table{
+    .price-table {
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
         font-size:13px;
     }
+    .price-table th, .price-table td {
+        padding:8px;
+    }
+    .card {
+        width:95%;
+        padding:12px;
+    }
+    .gallery img {
+        height:100px;
+    }
 }
+body, html{
+    width:100%;
+    overflow-x:hidden;
+}
+
 
 /* ===== Image Gallery ===== */
 .gallery{
@@ -167,6 +195,27 @@ header p{
     border-radius:12px;
     box-shadow:0 0 20px rgba(0,0,0,0.5);
 }
+/* Horizontal scroll gallery */
+.gallery{
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding-bottom:10px;
+}
+
+.gallery img{
+    flex:0 0 auto;
+    width:150px; /* أو حسب المساحة */
+    height:100px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
 </style>
 </head>
 
