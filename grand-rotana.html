@@ -195,6 +195,31 @@ body, html{
     border-radius:12px;
     box-shadow:0 0 20px rgba(0,0,0,0.5);
 }
+/* ===== Lightbox Arrows ===== */
+.nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:40px;
+    color:#fff;
+    cursor:pointer;
+    padding:10px 15px;
+    background:rgba(0,0,0,0.4);
+    border-radius:50%;
+    user-select:none;
+}
+
+.nav:hover{
+    background:rgba(0,0,0,0.7);
+}
+
+.prev{
+    right:20px; /* لأن الصفحة RTL */
+}
+
+.next{
+    left:20px;
+}
 /* Horizontal scroll gallery */
 .gallery{
     display:flex;
@@ -215,6 +240,8 @@ body, html{
 .gallery img:hover{
     transform:scale(1.05);
 }
+
+
 
 </style>
 </head>
@@ -255,7 +282,11 @@ body, html{
 
 <div class="card">
     <h3 style="text-align:center;color:#fd690d;margin-bottom:10px;">صور الفندق</h3>
-
+<div id="lightbox">
+    <span class="nav prev">&#10094;</span>
+    <img id="lightbox-img" src="">
+    <span class="nav next">&#10095;</span>
+</div>
     <div class="gallery">
         <img src="473794330.jpg">
         <img src="473793775.jpg">
@@ -284,26 +315,87 @@ body, html{
 <a class="back" href="index.html">⬅ رجوع لقائمة الفنادق</a>
 
 <!-- Lightbox Overlay -->
-<div id="lightbox" onclick="closeLightbox()">
+<div id="lightbox">
     <img id="lightbox-img" src="">
 </div>
 
+
 <script>
-const images = document.querySelectorAll('.gallery img');
+const images = Array.from(document.querySelectorAll('.gallery img'));
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 
-images.forEach(img => {
+let currentIndex = 0;
+let startX = 0;
+let isSwiping = false;
+
+/* فتح الصورة */
+images.forEach((img, index) => {
     img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
+        currentIndex = index;
         lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
     });
 });
 
-function closeLightbox() {
-    lightbox.style.display = 'none';
-}
+/* غلق عند الضغط خارج الصورة */
+lightbox.addEventListener('click', (e) => {
+    if (!isSwiping && e.target === lightbox) {
+        lightbox.style.display = 'none';
+    }
+});
+
+/* بداية السحب */
+lightbox.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isSwiping = false;
+});
+
+/* نهاية السحب */
+lightbox.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) {
+        isSwiping = true;
+
+        if (diff > 0 && currentIndex < images.length - 1) {
+            // سحب شمال → الصورة اللي بعدها
+            currentIndex++;
+        } else if (diff < 0 && currentIndex > 0) {
+            // سحب يمين → الصورة اللي قبلها
+            currentIndex--;
+        }
+
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+    setTimeout(() => {
+        isSwiping = false;
+    }, 100);
+});
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+/* صورة اللي بعدها */
+nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currentIndex < images.length - 1) {
+        currentIndex++;
+        lightboxImg.src = images[currentIndex].src;
+    }
+});
+
+/* صورة اللي قبلها */
+prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currentIndex > 0) {
+        currentIndex--;
+        lightboxImg.src = images[currentIndex].src;
+    }
+});
 </script>
+
 
 </body>
 </html>
