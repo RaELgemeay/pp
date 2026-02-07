@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>كونتيننتال بلازا اكوا بارك</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    background:#f3f5f7;
+}
+
+/* Header */
+header{
+    background:linear-gradient(135deg,#fd690d,#ff9f45);
+    color:#fff;
+    padding:18px 12px;
+    text-align:center;
+
+    padding-top: calc(18px + env(safe-area-inset-top));
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+header{
+    background:linear-gradient(135deg,#fd690d,#ff9f45);
+    color:#fff;
+    padding:18px 12px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+    font-size:22px;
+}
+
+header p{
+    margin:5px 0 0;
+    font-size:14px;
+    opacity:.9;
+}
+
+/* Card */
+.card{
+    width:95%;
+    margin:15px auto;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
+    padding:16px;
+}
+
+/* Price */
+.price{
+    background:#eaf7ee;
+    color:#198754;
+    text-align:center;
+    padding:12px;
+    border-radius:12px;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+/* ===== Styled Table ===== */
+.price-table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    font-size:14px;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.price-table th{
+    background:#fd690d;
+    color:#fff;
+    padding:10px;
+    font-weight:bold;
+}
+
+.price-table td{
+    background:#fff;
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #f0f0f0;
+}
+
+.price-table tr:nth-child(even) td{
+    background:#fff7f0;
+}
+
+.price-table .period{
+    background:#ffefe0;
+    font-weight:bold;
+    color:#fd690d;
+}
+
+.price-table .notes-cell{
+    background:#fff3e6;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* Notes Box */
+.notes{
+    margin-top:15px;
+    background:#fff7ed;
+    padding:12px;
+    border-radius:12px;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* Back Button */
+.back{
+    display:block;
+    width:95%;
+    margin:15px auto 25px;
+    text-align:center;
+    background:#fd690d;
+    color:#fff;
+    padding:14px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:16px;
+}
+
+/* Mobile adjustments */
+@media(max-width:600px){
+    .price-table {
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+        font-size:13px;
+    }
+    .price-table th, .price-table td {
+        padding:8px;
+    }
+    .card {
+        width:95%;
+        padding:12px;
+    }
+    .gallery img {
+        height:100px;
+    }
+}
+body, html{
+    width:100%;
+    overflow-x:hidden;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>كونتيننتال بلازا اكوا بارك</h1>
+    <p>شرم الشيخ</p>
+</header>
+
+<div class="card">
+    <div class="price">السعر يبدأ من 6800 جنيه</div>
+
+    <table class="price-table">
+        <tr>
+            <th>الفترة</th>
+            <th>دبل جاردن فيو</th>
+             <th>دبل بول فيو</th>
+            <th>دبل سي فيو</th>
+            <th>الإقامة</th>
+            <th>ملاحظات</th>
+        </tr>
+        <tr>
+            <td class="period">1-10 → 1-22</td>
+            <td>6800</td>
+            <td>7300</td>
+            <td>7550</td>
+            <td>سوفت اولنكوزيف</td>
+            <td class="notes-cell">
+                طفل أقل من 12 سنة مجانًا<br>
+                 وطفل اقل من6 مجانا
+                
+            </td>
+        </tr>
+          <tr>
+            <td class="period">1-23 → 2-08</td>
+            <td>7300</td>
+            <td>7800</td>
+            <td>8050</td>
+             <td>سوفت اولنكوزيف</td>
+            <td class="notes-cell">
+                SGL = PAX × 1.8<br> 
+                 TPL = DBL * 1.5
+            </td>
+       
+        </tr>
+    </table>
+</div>
+
+<div class="card">
+    <h3 style="text-align:center;color:#fd690d;margin-bottom:10px;">صور الفندق</h3>
+<div id="lightbox">
+    <span class="nav prev">&#10094;</span>
+    <img id="lightbox-img" src="">
+    <span class="nav next">&#10095;</span>
+</div>
+   <div class="card">
+    <video controls style="width:100%;border-radius:18px;">
+        <source src="con1i.mp4" type="video/mp4">
+        متصفحك لا يدعم الفيديو
+    </video>
+</div>
+
+</div>
+
+<div class="card">
+    <video controls style="width:100%;border-radius:18px;">
+        <source src="con1.mp4" type="video/mp4">
+        متصفحك لا يدعم الفيديو
+    </video>
+</div>
+
+<a class="back" href="index.html">⬅ رجوع لقائمة الفنادق</a>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox">
+    <img id="lightbox-img" src="">
+</div>
+
+
+<script>
+const images = Array.from(document.querySelectorAll('.gallery img'));
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+let currentIndex = 0;
+let startX = 0;
+let isSwiping = false;
+
+
+</script>
+
+
+</body>
+</html>
